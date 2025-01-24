@@ -70,45 +70,52 @@ function Pidoras(slot)
             task.wait()
             local player = game.Players.LocalPlayer
             local character = player.Character
+            local nativeGet
             if character then
                 local tool = character:FindFirstChildOfClass("Tool")
                 if tool == nil then
-                    local nativeGet = game:GetService("CoreGui").Native.MainContainerFrame.MainFrame.ContainerFrame:GetChildren()
-                    for i, v in pairs(nativeGet) do
-                        if v.Name == "SectionListFrame" then
-                            for x, z in pairs(v:GetChildren()) do
-                                if z.Name == "ScrollingFrame" then
-                                    for a, b in pairs(z:GetChildren()) do
-                                        if b.Name ~= "UIListLayout" and b.Name ~= "UIPadding" and b.Name ~= "Main" then
-                                            if b.Name == "Appraise" and (useSlots ~= "" and useSlots ~= nil) then
-                                                local pos = b.ScrollingFrame.Appraise.InputBox.OuterBar.Bar.AbsolutePosition
-                                                BackgroundTransparencyappraise = b.ScrollingFrame.Appraise.InputBox.OuterBar.BackgroundTransparency
-                                                local Pointer = b.ScrollingFrame.Appraise.InputBox.OuterBar.Bar.Pointer
-                                                if BackgroundTransparencyappraise == 1 and game:GetService("Players").LocalPlayer.PlayerGui.hud.safezone.backpack.hotbar[slot]:WaitForChild("raritystar") then
-                                                    local button = game:GetService("Players").LocalPlayer.PlayerGui.hud.safezone.backpack.hotbar[slot]
-                                                    if button:IsA("ImageButton") and Pointer:IsA("ImageButton") then
-                                                        task.wait(1)
-                                                        GuiService.SelectedObject = button
-                                                        VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Return, false, game)
-                                                        VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Return, false, game)
-                                                        task.wait(1)
-                                                        GuiService.SelectedObject = nil
-                                                        task.wait(1)
-                                                        --GuiService.SelectedObject = Pointer
-                                                        local posx = Vector2.new(pos.X + 15,pos.Y+50)
-                                                        UserInputService:TouchTap(posx, true)
-                                                        UserInputService:TouchTap(posx, false)
+                    for a, b in pairs( game:GetService("CoreGui"):GetChildren()) do
+                        for c, d in pairs( b:GetChildren()) do
+                            if d:WaitForChild("Native") then
+                                nativeGet = d:WaitForChild("Native").MainContainerFrame.MainFrame.ContainerFrame:GetChildren()
+                                for i, v in pairs(nativeGet) do
+                                    if v.Name == "SectionListFrame" then
+                                        for x, z in pairs(v:GetChildren()) do
+                                            if z.Name == "ScrollingFrame" then
+                                                for a, b in pairs(z:GetChildren()) do
+                                                    if b.Name ~= "UIListLayout" and b.Name ~= "UIPadding" and b.Name ~= "Main" then
+                                                        if b.Name == "Appraise" and (useSlots ~= "" and useSlots ~= nil) then
+                                                            local pos = b.ScrollingFrame.Appraise.InputBox.OuterBar.Bar.AbsolutePosition
+                                                            BackgroundTransparencyappraise = b.ScrollingFrame.Appraise.InputBox.OuterBar.BackgroundTransparency
+                                                            local Pointer = b.ScrollingFrame.Appraise.InputBox.OuterBar.Bar.Pointer
+                                                            if BackgroundTransparencyappraise == 1 and game:GetService("Players").LocalPlayer.PlayerGui.hud.safezone.backpack.hotbar[slot]:WaitForChild("raritystar") then
+                                                                local button = game:GetService("Players").LocalPlayer.PlayerGui.hud.safezone.backpack.hotbar[slot]
+                                                                if button:IsA("ImageButton") and Pointer:IsA("ImageButton") then
+                                                                    task.wait(1)
+                                                                    GuiService.SelectedObject = button
+                                                                    VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Return, false, game)
+                                                                    VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Return, false, game)
+                                                                    task.wait(1)
+                                                                    GuiService.SelectedObject = nil
+                                                                    task.wait(1)
+                                                                    --GuiService.SelectedObject = Pointer
+                                                                    local posx = Vector2.new(pos.X + 15,pos.Y+50)
+                                                                    UserInputService:TouchTap(posx, true)
+                                                                    UserInputService:TouchTap(posx, false)
+                                                                end
+                                                            end
+                                                        end
                                                     end
+                                                    task.wait()
                                                 end
                                             end
+                                            task.wait()
                                         end
-                                        task.wait()
                                     end
+                                    task.wait()
                                 end
-                                task.wait()
                             end
                         end
-                        task.wait()
                     end
                 end
             end
