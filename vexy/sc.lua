@@ -1,5 +1,7 @@
 VirtualUser = game:GetService("VirtualUser")
 Workspace = game:GetService("Workspace")
+GuiService = game:GetService("GuiService")
+UserInputService = game:GetService("UserInputService")
 local v_u_1 = game:GetService("ReplicatedStorage")
 -- Locals
 local Players = game:GetService("Players")
@@ -81,13 +83,22 @@ function Pidoras(slot)
                                             if b.Name == "Appraise" and (useSlots ~= "" and useSlots ~= nil) then
                                                 local pos = b.ScrollingFrame.Appraise.InputBox.OuterBar.Bar.AbsolutePosition
                                                 BackgroundTransparencyappraise = b.ScrollingFrame.Appraise.InputBox.OuterBar.BackgroundTransparency
+                                                local Pointer = b.ScrollingFrame.Appraise.InputBox.OuterBar.Bar.Pointer
                                                 if BackgroundTransparencyappraise == 1 and game:GetService("Players").LocalPlayer.PlayerGui.hud.safezone.backpack.hotbar[slot]:WaitForChild("raritystar") then
-                                                    task.wait()
-                                                    VirtualInputManager:SendKeyEvent(true, 57, false, game)
-                                                    task.wait(3)
-                                                    --print(possX.." | "..possY)
-                                                    VirtualInputManager:SendMouseButtonEvent(pos.X + 15, pos.Y+50, 0, true, game:GetService("Players").LocalPlayer, 0)
-                                                    VirtualInputManager:SendMouseButtonEvent(pos.X + 15, pos.Y+50, 0, false, game:GetService("Players").LocalPlayer, 0)
+                                                    local button = game:GetService("Players").LocalPlayer.PlayerGui.hud.safezone.backpack.hotbar[slot]
+                                                    if button:IsA("ImageButton") and Pointer:IsA("ImageButton") then
+                                                        task.wait(1)
+                                                        GuiService.SelectedObject = button
+                                                        VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Return, false, game)
+                                                        VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Return, false, game)
+                                                        task.wait(1)
+                                                        GuiService.SelectedObject = nil
+                                                        task.wait(1)
+                                                        --GuiService.SelectedObject = Pointer
+                                                        local posx = Vector2.new(pos.X + 15,pos.Y+50)
+                                                        UserInputService:TouchTap(posx, true)
+                                                        UserInputService:TouchTap(posx, false)
+                                                    end
                                                 end
                                             end
                                         end
@@ -129,6 +140,7 @@ local AutoFreezeT = Tabs.Main:AddToggle("MyFreeze", {
     Description = "Read On Tutorial in Tab Home",
     Default = false
 })
+
 AutoFreezeT:OnChanged(function()
     autoAppraise = AutoFreezeT.Value
     if autoAppraise then
