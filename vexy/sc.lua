@@ -76,7 +76,7 @@ function Pidoras(slot)
                 if tool == nil then
                     for a, b in pairs( game:GetService("CoreGui"):GetChildren()) do
                         for c, d in pairs( b:GetChildren()) do
-                            if d:WaitForChild("Native") then
+                            if d.Name == "Native" then
                                 nativeGet = d:WaitForChild("Native").MainContainerFrame.MainFrame.ContainerFrame:GetChildren()
                                 for i, v in pairs(nativeGet) do
                                     if v.Name == "SectionListFrame" then
