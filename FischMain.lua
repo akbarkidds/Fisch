@@ -2203,7 +2203,7 @@ local aa = {
                 function()
                     local C = e(t.Dialog):Create()
                     C.Title.Text = z.Title
-                    C.Root.Size = UDim2.fromOffset(430, 330)
+                    C.Root.Size = UDim2.fromOffset(630, 430)
                     local D, E, F, G, H, I =
                         z.Hue,
                         z.Sat,
