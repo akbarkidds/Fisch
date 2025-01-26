@@ -1,7 +1,7 @@
 local httpService = game:GetService("HttpService")
 
 local InterfaceManager = {} do
-	InterfaceManager.Folder = "KiddsSettings"
+	InterfaceManager.Folder = "Kidds"
     InterfaceManager.Settings = {
         Theme = "Dark",
         Acrylic = true,
