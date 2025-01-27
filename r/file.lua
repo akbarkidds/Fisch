@@ -32,6 +32,7 @@ for i,v in pairs(Config.Rod) do
                 if price ~= "Inf" then
                     if tonumber(Money[1]) >= tonumber(price) then
                         events_upvr:WaitForChild("purchase"):FireServer(i, "rod", price, 1)
+			task.wait(1)
                     else
                         notif("Not Enough Money.!!", 3)
                     end
