@@ -10,19 +10,11 @@ end
 
 --// Variables
 
-local cloneref = cloneref or function(...) 
-	return ...
-end
+local Players, LocalPlayer, StarterGui = game:GetService("Players"), game:GetService("Players").LocalPlayer, game:GetService("StarterGui")
 
-local clonefunction = clonefunction or function(...)
-	return ...
-end
-
-local Players, LocalPlayer, StarterGui = cloneref(game:GetService("Players")), cloneref(game:GetService("Players").LocalPlayer), cloneref(game:GetService("StarterGui"))
-
-local SetCore = clonefunction(StarterGui.SetCore)
+local SetCore = StarterGui.SetCore
 --local GetDebugId = clonefunction(game.GetDebugId)
-local FindFirstChild = clonefunction(game.FindFirstChild)
+local FindFirstChild = game.FindFirstChild
 
 local CompareInstances = (CompareInstances and function(Instance1, Instance2)
 		if typeof(Instance1) == "Instance" and typeof(Instance2) == "Instance" then
