@@ -1684,7 +1684,7 @@ local aa = {
                 s(
                 "CanvasGroup",
                 {
-                    Size = UDim2.new(1, -t.TabWidth - 32, 1, -102),
+                    Size = UDim2.new(1, -t.TabWidth - 32, 1, -58),
                     Position = UDim2.fromOffset(t.TabWidth + 26, 90),
                     BackgroundTransparency = 1
                 }
