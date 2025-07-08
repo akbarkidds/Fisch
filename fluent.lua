@@ -1689,13 +1689,14 @@ local aa = {
                     Text = "Tab",
                     TextTransparency = 0,
                     FontFace = Font.new("rbxassetid://12187365364", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal),
-                    TextSize = 0,
+                    TextSize = 28,
                     TextXAlignment = "Left",
                     TextYAlignment = "Center",
-                    Size = UDim2.new(0, 0, 0, 0),
+                    Size = UDim2.new(1, -16, 0, 28),
                     Position = UDim2.fromOffset(t.TabWidth + 26, 56),
                     BackgroundTransparency = 1,
-                    ThemeTag = {TextColor3 = "Text"}
+                    ThemeTag = {TextColor3 = "Text"},
+                    Visible = false
                 }
             )
             v.ContainerHolder =
