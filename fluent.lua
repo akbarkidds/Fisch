@@ -2783,12 +2783,6 @@ local aa = {
             y()
             c.AddSignal(p:GetPropertyChangedSignal "AbsolutePosition", w)
             c.AddSignal(
-                n.MouseButton1Click,
-                function()
-                    l:Open()
-                end
-            )
-            c.AddSignal(
                 p.MouseButton1Click,
                 function()
                     l:Open()
