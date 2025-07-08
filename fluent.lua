@@ -2658,17 +2658,17 @@ local aa = {
             l.SetDesc = m.SetDesc
             local n, o =
                 e(
-                    "TextLabel",
+                    "TextBox",
                     {
                         FontFace = Font.new(
                             "rbxasset://fonts/families/GothamSSm.json",
                             Enum.FontWeight.Regular,
                             Enum.FontStyle.Normal
                         ),
-                        Text = "Value",
                         TextColor3 = Color3.fromRGB(240, 240, 240),
                         TextSize = 13,
                         TextXAlignment = Enum.TextXAlignment.Left,
+                        TextYAlignment = Enum.TextYAlignment.Center,
                         Size = UDim2.new(1, -30, 0, 14),
                         Position = UDim2.new(0, 8, 0.5, 0),
                         AnchorPoint = Vector2.new(0, 0.5),
