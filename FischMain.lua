@@ -1,12 +1,3 @@
---[[
-    Fluent Interface Suite
-    This script is not intended to be modified.
-    To view the source code, see the 'src' folder on GitHub!
-
-    Author: dawid
-    License: MIT
-    GitHub: https://github.com/dawid-scripts/Fluent
---]]
 local a, b = {
     {
         1,
@@ -1680,23 +1671,6 @@ local aa = {
                     ClipsDescendants = true
                 },
                 {v.TabHolder, D}
-            )
-            v.TabDisplay =
-                s(
-                "TextLabel",
-                {
-                    RichText = true,
-                    Text = "Tab",
-                    TextTransparency = 0,
-                    FontFace = Font.new("rbxassetid://12187365364", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal),
-                    TextSize = 28,
-                    TextXAlignment = "Left",
-                    TextYAlignment = "Center",
-                    Size = UDim2.new(1, -16, 0, 28),
-                    Position = UDim2.fromOffset(t.TabWidth + 26, 56),
-                    BackgroundTransparency = 1,
-                    ThemeTag = {TextColor3 = "Text"}
-                }
             )
             v.ContainerHolder =
                 s(
