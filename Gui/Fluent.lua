@@ -2755,11 +2755,7 @@ local aa = {
                     v.Position = UDim2.fromOffset(p.AbsolutePosition.X - 1, p.AbsolutePosition.Y - 5 - w)
                 end, 0
             local y, z = function()
-                    if #l.Values > 10 then
-                        v.Size = UDim2.fromOffset(x, 392)
-                    else
-                        v.Size = UDim2.fromOffset(x, s.AbsoluteContentSize.Y + 10)
-                    end
+                    v.Size = UDim2.fromOffset(x, 200)
                 end, function()
                     t.CanvasSize = UDim2.fromOffset(0, s.AbsoluteContentSize.Y)
                 end
