@@ -2665,7 +2665,6 @@ local aa = {
                             Enum.FontWeight.Regular,
                             Enum.FontStyle.Normal
                         ),
-                        Text = ""
                         TextColor3 = Color3.fromRGB(240, 240, 240),
                         TextSize = 13,
                         TextXAlignment = Enum.TextXAlignment.Left,
