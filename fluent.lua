@@ -1315,7 +1315,7 @@ local aa = {
                         v.Visible = false
                     end
                     o.Containers[q].Visible = true
-                    r.ContainerPosMotor:setGoal(l(94, {frequency = 5}))
+                    r.ContainerPosMotor:setGoal(l(50, {frequency = 5}))
                     r.ContainerBackMotor:setGoal(l(0, {frequency = 8}))
                 end
             )
