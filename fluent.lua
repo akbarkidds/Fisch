@@ -1692,8 +1692,8 @@ local aa = {
                     TextSize = 28,
                     TextXAlignment = "Left",
                     TextYAlignment = "Center",
-                    Size = UDim2.new(1, -16, 0, 28),
-                    Position = UDim2.fromOffset(t.TabWidth + 26, 56),
+                    Size = UDim2.new(0, 0, 0, 0),
+                    Position = UDim2.fromOffset(0, 0),
                     BackgroundTransparency = 1,
                     ThemeTag = {TextColor3 = "Text"},
                     Visible = false
