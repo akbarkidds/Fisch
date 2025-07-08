@@ -2665,6 +2665,7 @@ local aa = {
                             Enum.FontWeight.Regular,
                             Enum.FontStyle.Normal
                         ),
+                        Text = ""
                         TextColor3 = Color3.fromRGB(240, 240, 240),
                         TextSize = 13,
                         TextXAlignment = Enum.TextXAlignment.Left,
@@ -2781,6 +2782,12 @@ local aa = {
             w()
             y()
             c.AddSignal(p:GetPropertyChangedSignal "AbsolutePosition", w)
+            c.AddSignal(
+                n.MouseButton1Click,
+                function()
+                    l:Open()
+                end
+            )
             c.AddSignal(
                 p.MouseButton1Click,
                 function()
