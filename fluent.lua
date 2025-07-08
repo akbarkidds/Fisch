@@ -1724,7 +1724,7 @@ local aa = {
             v.SelectorPosMotor = l.SingleMotor.new(17)
             v.SelectorSizeMotor = l.SingleMotor.new(0)
             v.ContainerBackMotor = l.SingleMotor.new(0)
-            v.ContainerPosMotor = l.SingleMotor.new(94)
+            v.ContainerPosMotor = l.SingleMotor.new(50)
             G:onStep(
                 function(I)
                     v.Root.Size = UDim2.new(0, I.X, 0, I.Y)
