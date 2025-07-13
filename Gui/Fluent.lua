@@ -2700,7 +2700,7 @@ local aa = {
                 e(
                 "ScrollingFrame",
                 {
-                    Size = UDim2.new(1, -5, 1, -10),
+                    Size = UDim2.new(1, 10, 1, 0),
                     Position = UDim2.fromOffset(5, 5),
                     BackgroundTransparency = 1,
                     BottomImage = "rbxassetid://6889812791",
@@ -2717,7 +2717,7 @@ local aa = {
             local u =
                 e(
                 "Frame",
-                {Size = UDim2.fromScale(1, 0.6), ThemeTag = {BackgroundColor3 = "DropdownHolder"}},
+                {Size = UDim2.fromScale(1, 1), ThemeTag = {BackgroundColor3 = "DropdownHolder"}},
                 {
                     t,
                     e("UICorner", {CornerRadius = UDim.new(0, 7)}),
