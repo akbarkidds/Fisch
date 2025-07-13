@@ -315,7 +315,6 @@ local aa = {
             local r, s = function(r)
                     local s = k()
                     local t, u = r.AbsoluteSize - Vector2.new(s, s), r.AbsolutePosition + Vector2.new(s / 2, s / 2)
-                print(t.." | "..u)
                     p(t, u)
                     task.spawn(q)
                 end, function()
